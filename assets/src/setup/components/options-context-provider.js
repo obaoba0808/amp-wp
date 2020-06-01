@@ -20,7 +20,7 @@ export const Options = createContext();
  * @param {string} props.optionsRestEndpoint REST endpoint to retrieve options.
  */
 export function OptionsContextProvider( { children, optionsKey, optionsRestEndpoint } ) {
-	const [ options, setOptions ] = useState( null );
+	const [ options, setOptions ] = useState( {} );
 	const [ fetchingOptions, setFetchingOptions ] = useState( false );
 	const [ fetchOptionsError, setFetchOptionsError ] = useState( null );
 	const [ savingOptions, setSavingOptions ] = useState( false );
@@ -62,7 +62,7 @@ export function OptionsContextProvider( { children, optionsKey, optionsRestEndpo
 	 *
 	 * @param {Object} Updated options values.
 	 */
-	const updateOptions = useCallback( ( newOptions ) => {
+	const editOptions = useCallback( ( newOptions ) => {
 		if ( false === hasChanges ) {
 			setHasChanges( true );
 		}
@@ -119,7 +119,7 @@ export function OptionsContextProvider( { children, optionsKey, optionsRestEndpo
 					saveOptions,
 					saveOptionsError,
 					savingOptions,
-					updateOptions,
+					editOptions,
 				}
 			}
 		>

@@ -118,12 +118,17 @@ final class AMP_Setup_Wizard_Submenu_Page {
 
 		wp_styles()->add_data( self::JS_HANDLE, 'rtl', 'replace' );
 
+		$theme = wp_get_theme();
 		wp_add_inline_script(
 			self::JS_HANDLE,
 			sprintf(
 				'var ampSetup = %s;',
 				wp_json_encode(
 					[
+						'ACTIVE_THEME'           => [
+							'name'           => $theme->name,
+							'screenshot_url' => $theme->get_screenshot(),
+						],
 						'AMP_OPTIONS_KEY'        => AMP_Options_Manager::OPTION_NAME,
 						'APP_ROOT_ID'            => self::APP_ROOT_ID,
 						'EXIT_LINK'              => admin_url( 'admin.php?page=' . AMP_Options_Manager::OPTION_NAME ),

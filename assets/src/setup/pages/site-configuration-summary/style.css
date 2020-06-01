@@ -1,0 +1,27 @@
+
+.amp-site-configuration-summary p {
+	margin-bottom: 1.5rem;
+}
+
+.amp-site-configuration-summary__theme-previews {
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-columns: 3fr 1fr;
+	padding: 1.5rem 0;
+	width: 100%;
+}
+
+.amp-site-configuration-summary__theme-previews img {
+	height: auto;
+	width: 100%;
+}
+
+.amp-site-configuration-summary__screenshot-description {
+	align-items: center;
+	display: flex;
+	margin-bottom: 1rem;
+}
+
+.amp-site-configuration-summary__screenshot-description svg {
+	margin-right: 0.75rem;
+}

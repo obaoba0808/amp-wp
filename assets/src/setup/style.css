@@ -56,6 +56,10 @@
 	}
 }
 
+.amp-setup-container h1 {
+	margin-bottom: 1.5rem;
+}
+
 /**
  * Main app panel.
  */

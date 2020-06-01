@@ -20,7 +20,7 @@ import { Options } from '../../components/options-context-provider';
 
 export function ThemeCard( { description, homepage, screenshotUrl, slug, name } ) {
 	const instanceId = useInstanceId( ThemeCard );
-	const { options, updateOptions } = useContext( Options );
+	const { options, editOptions } = useContext( Options );
 	const { reader_theme: readerTheme } = options || {};
 
 	return (
@@ -36,7 +36,7 @@ export function ThemeCard( { description, homepage, screenshotUrl, slug, name } 
 						id={ instanceId }
 						checked={ readerTheme === slug }
 						onChange={ ( ) => {
-							updateOptions( { reader_theme: slug } );
+							editOptions( { reader_theme: slug } );
 						} }
 					/>
 					<h2>
